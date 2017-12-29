@@ -1,0 +1,28 @@
+[user]
+     name = Rafal Szlachta
+     email = 
+
+ [color]
+     ui = auto
+
+ [color]
+     decorate = short
+
+ [alias]
+     ci = commit
+     di = diff --color-words
+     st = status
+     pr = pull -r
+
+     # aliases that match the hg in / out commands
+     out      = !git fetch && git log FETCH_HEAD..
+     outgoing = !git fetch && git log FETCH_HEAD..
+     in       = !git fetch && git log ..FETCH_HEAD
+     incoming = !git fetch && git log ..FETCH_HEAD
+[core]
+	editor = vim
+	autocrlf = input
+[push]
+	default = simple
+[url "https://"]
+    insteadOf = git://

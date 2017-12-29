@@ -1,0 +1,45 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+export JAVA_8_HOME=`/usr/libexec/java_home -v1.8`
+
+alias java8='export JAVA_HOME=$JAVA_8_HOME'
+
+export ACTIVEMQ_OPTS="-Xmx512M -Dorg.apache.activemq.UseDedicatedTaskRunner=false"  
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+
+#source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+zstyle ':completion:*' completer _complete _ignored
+zstyle :compinstall filename '/home/xocoatl/.zshrc'
+autoload -Uz compinit promptinit colors
+unsetopt correct_all
+setopt clobber
+compinit
+
+# Color mvn
+#source ~/mvn-in-colors.zsh
+#source ~/mci-in-colors.zsh
+
+#alias mvn=mvn-in-colors
+#alias mci=mci-in-colors
+alias mci="mvn clean install"
+alias cdphx="cd ~/projects/phoenix-git/phoenix"
+alias signingService='cd /Library/hgCommitSigs && python hgSigningService.py'
+alias hpu="hg pull -u"
+alias ll="ls -lah"
+alias edek="ssh ed04sv01"
+
