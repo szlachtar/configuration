@@ -39,4 +39,5 @@ export DOCKER_HOST="unix:///var/run/docker.sock"
 
 alias mci="mvn clean install"
 alias ll="ls -lah"
-
+alias dockerrm="docker ps -a | awk '{print \$1}' | xargs docker rm -v"
+alias dockerkill="docker ps -a | awk '{print \$1}' | xargs docker kill"
